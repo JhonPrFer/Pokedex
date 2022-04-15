@@ -4,7 +4,8 @@ import IDList from '@/Components/IDList/IDList'
 import * as S from '@/styles/HomeStyled'
 
 export default function Home() {
-  const [filter, SetFilter] = useState('Pokemon')
+  const [filter, setFilter] = useState('Pokemon')
+  const [search, setSearch] = useState('')
 
   return (
     <S.Wrapper>
@@ -14,19 +15,20 @@ export default function Home() {
           id="search"
           name="search"
           placeholder="Serch Pokemon"
+          onChange={e => setSearch(e.target.value)}
         />
 
         <select
           name="filter"
           id="filter"
-          onChange={e => SetFilter(e.target.value)}
+          onChange={e => setFilter(e.target.value)}
         >
           <option value="Pokemon">ID</option>
           <option value="Type">Type</option>
         </select>
         <h1>Pokedex</h1>
         <p>{filter}</p>
-        <IDList />
+        <IDList search={search} />
       </S.Home>
     </S.Wrapper>
   )
