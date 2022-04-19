@@ -13,6 +13,7 @@ export const Card = styled.article`
   h2 {
     text-transform: capitalize;
     font-size: 2.4rem;
+    color: #1e293b;
     text-overflow: clip;
     white-space: nowrap;
     overflow-y: auto;
@@ -237,4 +238,51 @@ export const Imagediv = styled.div`
   height: max-content;
   grid-column: 2/2;
   grid-row: 1/3;
+`
+
+export const AltCard = styled.article`
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 324px;
+  height: 160px;
+  padding: 25px;
+  border-radius: 25px;
+  background-color: #f1f5f9;
+
+  .placename {
+    width: 120px;
+    height: 26px;
+    background-color: #e2e8f0;
+    border-radius: 10px;
+  }
+
+  .placeimage {
+    width: 120px;
+    height: 120px;
+    background-color: #e2e8f0;
+    border-radius: 10px;
+    grid-row: 1/3;
+    grid-column: 2;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .placetype {
+    width: 56px;
+    height: 22px;
+    background-color: #e2e8f0;
+    padding: 8px;
+    border-radius: 10px;
+  }
+
+  .placetypename {
+    background-color: #94a3b8;
+    width: 40px;
+    height: 6px;
+    border-radius: 10px;
+  }
 `

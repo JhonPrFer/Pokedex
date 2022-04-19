@@ -1,5 +1,7 @@
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
+import img from '@/public/Images/noResults.png'
 import { PokeType } from '@/types/PokeType'
 
 import Card from '../Card/Card'
@@ -61,13 +63,21 @@ export default function TypeList({ search }: Props) {
             }
             return 0
           })
-          .map(pokemon => (
-            <Card name={pokemon.pokemon.name} />
-          ))}
+          .map((pokemon, index) => {
+            const key = index
+
+            return <Card key={key} name={pokemon.pokemon.name} />
+          })}
       </S.List>
     </S.TypeList>
   ) : (
-    <p>a</p>
+    <S.AltList>
+      <Image src={img} alt="No results image" width={220} height={180} />
+      <p>
+        We didn&apos;t find Pokemons with the indicated filters. Are you sure
+        everything is ok?
+      </p>
+    </S.AltList>
   )
 }
 

@@ -29,15 +29,29 @@ export default function Card({ name }: Props) {
         />
       </S.Imagediv>
       <section>
-        {pokemon.types.map(type => (
-          <h3 className={`type ${type.type.name}`}>
-            {type.type.name.toUpperCase()}
-          </h3>
-        ))}
+        {pokemon.types.map((type, index) => {
+          const key = index
+          return (
+            <h3 key={key} className={`type ${type.type.name}`}>
+              {type.type.name.toUpperCase()}
+            </h3>
+          )
+        })}
       </section>
     </S.Card>
   ) : (
-    <p>a</p>
+    <S.AltCard>
+      <div className="placename" />
+      <div className="placeimage" />
+      <section>
+        <div className="placetype">
+          <div className="placetypename" />
+        </div>
+        <div className="placetype">
+          <div className="placetypename" />
+        </div>
+      </section>
+    </S.AltCard>
   )
 }
 

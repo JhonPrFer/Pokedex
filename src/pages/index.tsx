@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import IDList from '@/Components/IDList/IDList'
 import TypeList from '@/Components/TypeList/TypeList'
+import Search from '@/public/Icons/Search'
 import * as S from '@/styles/HomeStyled'
 
 export default function Home() {
@@ -26,7 +27,7 @@ export default function Home() {
               defaultValue={search}
               onChange={e => setSearch(e.target.value)}
             />
-            <p>aaa</p>
+            <Search />
           </label>
           <select
             name="filter"
