@@ -51,13 +51,13 @@ export default function TypeList({ search }: Props) {
       <S.List>
         {type.pokemon
           .filter(val => {
-            if (search === '') {
+            if (search.trim() === '') {
               return val
             }
             if (
               val.pokemon.name
                 .toLocaleLowerCase()
-                .includes(search.toLocaleLowerCase())
+                .includes(search.toLocaleLowerCase().trim())
             ) {
               return val
             }

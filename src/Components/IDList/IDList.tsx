@@ -21,11 +21,13 @@ export default function IdList({ search }: Props) {
     <S.IDList>
       {pokemons.results
         .filter(val => {
-          if (search === '') {
+          if (search.trim() === '') {
             return val
           }
           if (
-            val.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+            val.name
+              .toLocaleLowerCase()
+              .includes(search.toLocaleLowerCase().trim())
           ) {
             return val
           }
